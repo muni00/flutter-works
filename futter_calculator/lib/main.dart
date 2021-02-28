@@ -124,60 +124,65 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
           Expanded(child: Divider()),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * .75,
-                child: Table(
-                  children: [
-                    TableRow(children: [
-                      buildButton("C", 1, ColorConstants.instance.sweetCorn),
-                      buildButton("DEL", 1, ColorConstants.instance.blue),
-                      buildButton("+", 1, ColorConstants.instance.voodoo),
-                    ]),
-                    TableRow(children: [
-                      buildButton("7", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("8", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("9", 1, ColorConstants.instance.amethystSmoke),
-                    ]),
-                    TableRow(children: [
-                      buildButton("4", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("5", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("6", 1, ColorConstants.instance.amethystSmoke),
-                    ]),
-                    TableRow(children: [
-                      buildButton("1", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("2", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("3", 1, ColorConstants.instance.amethystSmoke),
-                    ]),
-                    TableRow(children: [
-                      buildButton(".", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("0", 1, ColorConstants.instance.amethystSmoke),
-                      buildButton("00", 1, ColorConstants.instance.amethystSmoke),
-                    ]),
-                  ],
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: Table(
-                  children: [
-                    TableRow(children: [
-                      buildButton("×", 1, ColorConstants.instance.voodoo),
-                    ]),
-                    TableRow(children: [
-                      buildButton("-", 1, ColorConstants.instance.voodoo),
-                    ]),
-                    TableRow(children: [
-                      buildButton("+", 1, ColorConstants.instance.voodoo),
-                    ]),
-                    TableRow(children: [
-                      buildButton("=", 2, ColorConstants.instance.voodoo),
-                    ])
-                  ],
-                ),
-              )
-            ],
+            children: [sayiTuslariContainer(context), islemlerContainer(context)],
           )
+        ],
+      ),
+    );
+  }
+
+  Container sayiTuslariContainer(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * .75,
+      child: Table(
+        children: [
+          TableRow(children: [
+            buildButton("C", 1, ColorConstants.instance.sweetCorn),
+            buildButton("DEL", 1, ColorConstants.instance.blue),
+            buildButton("+", 1, ColorConstants.instance.voodoo),
+          ]),
+          TableRow(children: [
+            buildButton("7", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("8", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("9", 1, ColorConstants.instance.amethystSmoke),
+          ]),
+          TableRow(children: [
+            buildButton("4", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("5", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("6", 1, ColorConstants.instance.amethystSmoke),
+          ]),
+          TableRow(children: [
+            buildButton("1", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("2", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("3", 1, ColorConstants.instance.amethystSmoke),
+          ]),
+          TableRow(children: [
+            buildButton(".", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("0", 1, ColorConstants.instance.amethystSmoke),
+            buildButton("00", 1, ColorConstants.instance.amethystSmoke),
+          ]),
+        ],
+      ),
+    );
+  }
+
+  Container islemlerContainer(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.25,
+      child: Table(
+        children: [
+          TableRow(children: [
+            buildButton("×", 1, ColorConstants.instance.voodoo),
+          ]),
+          TableRow(children: [
+            buildButton("-", 1, ColorConstants.instance.voodoo),
+          ]),
+          TableRow(children: [
+            buildButton("+", 1, ColorConstants.instance.voodoo),
+          ]),
+          TableRow(children: [
+            buildButton("=", 2, ColorConstants.instance.voodoo),
+          ])
         ],
       ),
     );
