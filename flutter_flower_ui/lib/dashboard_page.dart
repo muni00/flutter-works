@@ -46,7 +46,7 @@ class _DashboardPageState extends State<DashboardPage> with SingleTickerProvider
                     ],
                     color: Color(0xffc6e7fe),
                     shape: BoxShape.circle,
-                    image: DecorationImage(image: AssetImage("assets/images/happy_lama.jpg"), fit: BoxFit.contain),
+                    image: DecorationImage(image: AssetImage("assets/images/happy_lama.jpg"), fit: BoxFit.cover),
                   ),
                 ),
               ],
@@ -172,6 +172,7 @@ class _DashboardPageState extends State<DashboardPage> with SingleTickerProvider
                   child: Center(
                     child: Image.asset(
                       imgPath,
+                      fit: BoxFit.fill,
                       height: 50.0,
                       width: 50.0,
                     ),

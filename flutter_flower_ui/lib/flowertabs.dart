@@ -35,12 +35,16 @@ class _FlowerTabState extends State<FlowerTab> {
                 Container(
                   height: 75.5,
                   width: 75.5,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(7.0), color: Color(0xffffe3df)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(7.0),
+                    color: Color(0xffffe3df),
+                  ),
                   child: Center(
                     child: Image.asset(
                       imgPath,
-                      height: 50.0,
-                      width: 50.0,
+                      fit: BoxFit.fill,
+                      height: 60.0,
+                      width: 60.0,
                     ),
                   ),
                 ),
