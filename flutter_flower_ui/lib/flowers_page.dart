@@ -148,19 +148,23 @@ class _RosePageState extends State<RosePage> {
               ),
             ),
           ),
-          Container(
-              height: 225.0,
-              width: MediaQuery.of(context).size.width,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  _buildListItemi("1"),
-                  _buildListItemi("2"),
-                ],
-              ))
+          buildContainerDownMenu(context)
         ],
       ),
     );
+  }
+
+  Container buildContainerDownMenu(BuildContext context) {
+    return Container(
+        height: 225.0,
+        width: MediaQuery.of(context).size.width,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            _buildListItemi("1"),
+            _buildListItemi("2"),
+          ],
+        ));
   }
 
   _buildListItemi(String columNumber) {

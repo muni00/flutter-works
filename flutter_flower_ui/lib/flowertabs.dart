@@ -49,43 +49,7 @@ class _FlowerTabState extends State<FlowerTab> {
                   ),
                 ),
                 SizedBox(width: 20.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      flowerName,
-                      style: GoogleFonts.notoSans(fontSize: 14.0, fontWeight: FontWeight.w400),
-                    ),
-                    SmoothStarRating(
-                      allowHalfRating: false,
-                      onRated: (v) {},
-                      starCount: rating.toInt(),
-                      rating: rating,
-                      color: Color(0xffffd143),
-                      borderColor: Color(0xffffd143),
-                      size: 15.0,
-                      spacing: 0.0,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "\$" + price,
-                          style: GoogleFonts.lato(fontSize: 16.0, fontWeight: FontWeight.w600, textStyle: TextStyle(color: Color(0xfff68d7f))),
-                        ),
-                        SizedBox(width: 3.0),
-                        Text(
-                          "\$" + "18",
-                          style: GoogleFonts.lato(
-                            fontSize: 12.0,
-                            decoration: TextDecoration.lineThrough,
-                            fontWeight: FontWeight.w600,
-                            textStyle: TextStyle(color: Colors.grey.withOpacity(0.4)),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
+                columnMenuEx(flowerName, rating, price),
               ],
             ),
           ),
@@ -103,6 +67,50 @@ class _FlowerTabState extends State<FlowerTab> {
           )
         ],
       ),
+    );
+  }
+
+  Column columnMenuEx(String flowerName, double rating, String price) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          flowerName,
+          style: GoogleFonts.notoSans(fontSize: 14.0, fontWeight: FontWeight.w400),
+        ),
+        smoothStarRating(rating),
+        Row(
+          children: [
+            Text(
+              "\$" + price,
+              style: GoogleFonts.lato(fontSize: 16.0, fontWeight: FontWeight.w600, textStyle: TextStyle(color: Color(0xfff68d7f))),
+            ),
+            SizedBox(width: 3.0),
+            Text(
+              "\$" + "18",
+              style: GoogleFonts.lato(
+                fontSize: 12.0,
+                decoration: TextDecoration.lineThrough,
+                fontWeight: FontWeight.w600,
+                textStyle: TextStyle(color: Colors.grey.withOpacity(0.4)),
+              ),
+            )
+          ],
+        )
+      ],
+    );
+  }
+
+  SmoothStarRating smoothStarRating(double rating) {
+    return SmoothStarRating(
+      allowHalfRating: false,
+      onRated: (v) {},
+      starCount: rating.toInt(),
+      rating: rating,
+      color: Color(0xffffd143),
+      borderColor: Color(0xffffd143),
+      size: 15.0,
+      spacing: 0.0,
     );
   }
 }
